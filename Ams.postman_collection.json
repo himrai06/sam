@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "dcb33dd7-6454-4a35-9729-57689956c344",
+		"name": "Ams",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"h.rai@partner.samsung.com\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://107.108.6.84/nsnp/ams-api/auth/login",
+					"protocol": "http",
+					"host": [
+						"107",
+						"108",
+						"6",
+						"84"
+					],
+					"path": [
+						"nsnp",
+						"ams-api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forget-password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"h.rai@par.samsung.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://107.108.6.84/nsnp/ams-api/auth/forget-password",
+					"protocol": "http",
+					"host": [
+						"107",
+						"108",
+						"6",
+						"84"
+					],
+					"path": [
+						"nsnp",
+						"ams-api",
+						"auth",
+						"forget-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change-password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"h.rai@partner.samsung.com\",\r\n    \"otp\": \"663345\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://107.108.6.84/nsnp/ams-api/auth/change-password",
+					"protocol": "http",
+					"host": [
+						"107",
+						"108",
+						"6",
+						"84"
+					],
+					"path": [
+						"nsnp",
+						"ams-api",
+						"auth",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "asset-scan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMDcuMTA4LjYuODRcL25zbnBcL2Ftcy1hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNjg0MTQ3MzA2LCJleHAiOjE2ODQxNTA5MDYsIm5iZiI6MTY4NDE0NzMwNiwianRpIjoicUtLbU9HRFdPTTJmMmdnbyIsInN1YiI6OCwicHJ2IjoiN2I2MWVlMGEyMmRmZTQyZGE3Y2Y0NmJmYWE5ZjlmYzBkYTJmYjUxMSJ9.yFXm-pbbPAywzLaAipZRbMKSxZfNJvk10DL7QXfWdOk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "barcode",
+							"value": "C550002033002614T",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Ref",
+							"type": "text"
+						},
+						{
+							"key": "user_name",
+							"value": "Himanshu",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/h.rai/Pictures/Screenshots/Screenshot (4).png"
+						},
+						{
+							"key": "status",
+							"value": "m",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://107.108.6.84/nsnp/ams-api/asset/scan",
+					"protocol": "http",
+					"host": [
+						"107",
+						"108",
+						"6",
+						"84"
+					],
+					"path": [
+						"nsnp",
+						"ams-api",
+						"asset",
+						"scan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dashboard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMDcuMTA4LjYuODRcL25zbnBcL2Ftcy1hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNjg0MTQ3MzA2LCJleHAiOjE2ODQxNTA5MDYsIm5iZiI6MTY4NDE0NzMwNiwianRpIjoicUtLbU9HRFdPTTJmMmdnbyIsInN1YiI6OCwicHJ2IjoiN2I2MWVlMGEyMmRmZTQyZGE3Y2Y0NmJmYWE5ZjlmYzBkYTJmYjUxMSJ9.yFXm-pbbPAywzLaAipZRbMKSxZfNJvk10DL7QXfWdOk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://107.108.6.84/nsnp/ams-api/user/dashboard",
+					"protocol": "http",
+					"host": [
+						"107",
+						"108",
+						"6",
+						"84"
+					],
+					"path": [
+						"nsnp",
+						"ams-api",
+						"user",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "asset-status-list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMDcuMTA4LjYuODRcL25zbnBcL2Ftcy1hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNjg0MjMzMTQ0LCJleHAiOjE2ODQyMzY3NDQsIm5iZiI6MTY4NDIzMzE0NCwianRpIjoiOUNMcDJvOTZGQUxtWnJ2RSIsInN1YiI6OCwicHJ2IjoiN2I2MWVlMGEyMmRmZTQyZGE3Y2Y0NmJmYWE5ZjlmYzBkYTJmYjUxMSJ9.jPUoybmxcLy8EjA_WPloqAat2Yvr24kxAX9ic4_DJk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://107.108.6.84/nsnp/ams-api/asset/status-list",
+					"protocol": "http",
+					"host": [
+						"107",
+						"108",
+						"6",
+						"84"
+					],
+					"path": [
+						"nsnp",
+						"ams-api",
+						"asset",
+						"status-list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
